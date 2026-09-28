@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LilProg")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80ebc236c8bec9df98fc537b9f580b79766151c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("LilProg")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LilProg")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
