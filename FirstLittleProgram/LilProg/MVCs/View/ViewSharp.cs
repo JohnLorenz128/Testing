@@ -58,5 +58,10 @@ namespace ConsoleApp1.MVCs.View
         {
             System.Console.WriteLine("Invalid Operator, Redoing Input...");
         }
+
+        public void DeleteThisRandomEmpty()
+        {
+            System.Console.WriteLine("Hell");
+        }
     }
 }
