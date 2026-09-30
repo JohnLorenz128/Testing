@@ -1,7 +1,5 @@
 using ConsoleApp1.MVCs.View;
 using ConsoleApp1.MVCs.Model;
-using System.Runtime.ExceptionServices;
-using System.Runtime.CompilerServices;
 
 namespace ConsoleApp1.MVCs.Controller
 {
@@ -13,12 +11,14 @@ namespace ConsoleApp1.MVCs.Controller
         String blank = "\0";
         const char blankChar = '\0';
         const int blankInt = 0;
-        
+
         public void Run()
         {
             double firstNumber = blankInt;
-            char operato = blankChar;
+            char operator1 = blankChar;
             double secondNumber = blankInt;
+            char? operator2 = null;
+            double? thirdNumber = null;
             double answer;
             string? choiceToContinue = blank;
 
@@ -26,11 +26,13 @@ namespace ConsoleApp1.MVCs.Controller
             {
                 choiceToContinue = blank;
                 mvcV.OpeningMessage();
+
                 firstNumber = ExceptionHandlingDouble(mvcV.FirstNumberMessage);
+
                 while (true)
                 {
-                    operato = ExceptionHandlingChar(mvcV.ChooseOperatorMessage);
-                    if (operato != '+' && operato != '-' && operato != '*' && operato != '/' && operato != '^')
+                    operator1 = ExceptionHandlingChar(mvcV.ChooseOperatorMessage);
+                    if (operator1 != '+' && operator1 != '-' && operator1 != '*' && operator1 != '/' && operator1 != '^')
                     {
                         mvcV.InvalidoperatorMessage();
                     }
@@ -39,9 +41,35 @@ namespace ConsoleApp1.MVCs.Controller
                         break;
                     }
                 }
+
                 secondNumber = ExceptionHandlingDouble(mvcV.SecondNumberMessage);
-                answer = mvcM.AnswerCalculation(firstNumber, secondNumber, operato);
-                mvcV.CalculationMessage(operato, firstNumber, secondNumber, answer);
+
+                while (true)
+                {
+                    operator2 = ExceptionHandlingOptionalChar(mvcV.ChooseOptionalOperatorMessage);
+                    if (operator2.HasValue && operator2 != '+' && operator2 != '-' && operator2 != '*' && operator2 != '/' && operator2 != '^')
+                    {
+                        mvcV.InvalidoperatorMessage();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (operator2.HasValue)
+                {
+                    thirdNumber = ExceptionHandlingDouble(mvcV.ThirdNumberMessage);
+                    answer = mvcM.AnswerCalculation(firstNumber, secondNumber, operator1, thirdNumber.Value, operator2.Value);
+                }
+                else
+                {
+                    thirdNumber = null;
+                    answer = mvcM.AnswerCalculation(firstNumber, secondNumber, operator1);
+                }
+
+                mvcV.CalculationMessage(operator1, firstNumber, secondNumber, operator2, thirdNumber, answer);
+
                 choiceToContinue = ExceptionHandlingString(mvcV.AgainMessage);
                 if (choiceToContinue != null && choiceToContinue.ToUpper()[0] == 'N')
                 {
@@ -51,13 +79,9 @@ namespace ConsoleApp1.MVCs.Controller
             mvcV.ClosingMessage();
         }
 
-
-
-
-        //Just Exception Handling Overloading Area
+        // Just Exception Handling Overloading Area
         private double ExceptionHandlingDouble(Action message)
         {
-
             double x = blankInt;
             bool excepsyon;
             do
@@ -72,8 +96,8 @@ namespace ConsoleApp1.MVCs.Controller
                 {
                     mvcV.ExceptionMessage();
                     excepsyon = true;
-                }  
-            } while(excepsyon);
+                }
+            } while (excepsyon);
             return x;
         }
 
@@ -89,7 +113,7 @@ namespace ConsoleApp1.MVCs.Controller
                 try
                 {
                     sx = Console.ReadLine();
-                    if (sx == null)
+                    if (string.IsNullOrEmpty(sx))
                     {
                         mvcV.ItIsNullMessage();
                         excepsyon = true;
@@ -103,9 +127,22 @@ namespace ConsoleApp1.MVCs.Controller
                 {
                     mvcV.ExceptionMessage();
                     excepsyon = true;
-                }  
-            } while(excepsyon);
+                }
+            } while (excepsyon);
             return x;
+        }
+
+        private char? ExceptionHandlingOptionalChar(Action message)
+        {
+            message();
+            string? sx = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(sx))
+            {
+                return null;
+            }
+
+            return sx[0];
         }
 
         private string? ExceptionHandlingString(Action message)
@@ -129,8 +166,8 @@ namespace ConsoleApp1.MVCs.Controller
                 {
                     mvcV.ExceptionMessage();
                     excepsyon = true;
-                }  
-            } while(excepsyon);
+                }
+            } while (excepsyon);
             return sx;
         }
     }
