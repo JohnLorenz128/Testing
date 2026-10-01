@@ -29,11 +29,5 @@ namespace ConsoleApp1.MVCs.Model
             }
             return answer;
         }
-
-        public double AnswerCalculation(double firstNumber, double secondNumber, char operator1, double thirdNumber, char operator2)
-        {
-            double firstResult = AnswerCalculation(firstNumber, secondNumber, operator1);
-            return AnswerCalculation(firstResult, thirdNumber, operator2);
-        }
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\Documents\\Visual Studio\\TryMVC\\cloneRep\\FirstLittleProgram\\LilProg\\LilProg.csproj": {}
+    "C:\\Users\\John Lorenz\\Documents\\AppDev_DeletableAfterPass\\FirstLittleProgramWithSLN\\FirstLittleProgram\\LilProg\\LilProg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\Documents\\Visual Studio\\TryMVC\\cloneRep\\FirstLittleProgram\\LilProg\\LilProg.csproj": {
+    "C:\\Users\\John Lorenz\\Documents\\AppDev_DeletableAfterPass\\FirstLittleProgramWithSLN\\FirstLittleProgram\\LilProg\\LilProg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\Visual Studio\\TryMVC\\cloneRep\\FirstLittleProgram\\LilProg\\LilProg.csproj",
+        "projectUniqueName": "C:\\Users\\John Lorenz\\Documents\\AppDev_DeletableAfterPass\\FirstLittleProgramWithSLN\\FirstLittleProgram\\LilProg\\LilProg.csproj",
         "projectName": "LilProg",
-        "projectPath": "C:\\Users\\ADMIN\\Documents\\Visual Studio\\TryMVC\\cloneRep\\FirstLittleProgram\\LilProg\\LilProg.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\Documents\\Visual Studio\\TryMVC\\cloneRep\\FirstLittleProgram\\LilProg\\obj\\",
+        "projectPath": "C:\\Users\\John Lorenz\\Documents\\AppDev_DeletableAfterPass\\FirstLittleProgramWithSLN\\FirstLittleProgram\\LilProg\\LilProg.csproj",
+        "packagesPath": "C:\\Users\\John Lorenz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\John Lorenz\\Documents\\AppDev_DeletableAfterPass\\FirstLittleProgramWithSLN\\FirstLittleProgram\\LilProg\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\John Lorenz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

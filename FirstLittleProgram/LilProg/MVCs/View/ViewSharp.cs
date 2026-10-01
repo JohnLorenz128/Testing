@@ -25,31 +25,14 @@ namespace ConsoleApp1.MVCs.View
             Console.Write("\nSecond Number: ");
         }
 
-        public void ThirdNumberMessage()
-        {
-            Console.Write("\nThird Number: ");
-        }
-
         public void ChooseOperatorMessage()
         {
             Console.Write("\nChoose Operation:\n\tADDITION: '+'\n\tSUBTRACTION: '-'\n\tMULTIPLICATION: '*'\n\tDIVISION: '/'\n\tPOWER: '^'\nEnter Symbol: ");
         }
 
-        public void ChooseOptionalOperatorMessage()
+        public void CalculationMessage(char operate, double firstnumber, double secondnumber, double answer)
         {
-            Console.Write("\nChoose Second Operation (Press ENTER to skip):\n\tADDITION: '+'\n\tSUBTRACTION: '-'\n\tMULTIPLICATION: '*'\n\tDIVISION: '/'\n\tPOWER: '^'\nEnter Symbol: ");
-        }
-
-        public void CalculationMessage(char operate1, double firstnumber, double secondnumber, char? operate2, double? thirdnumber, double answer)
-        {
-            if (operate2.HasValue && thirdnumber.HasValue)
-            {
-                System.Console.WriteLine($"\nANSWER\n{firstnumber} {operate1} {secondnumber} {operate2.Value} {thirdnumber.Value} = {answer}\n\n");
-            }
-            else
-            {
-                System.Console.WriteLine($"\nANSWER\n{firstnumber} {operate1} {secondnumber} = {answer}\n\n");
-            }
+            System.Console.WriteLine($"\nANSWER\n{firstnumber} {operate} {secondnumber} = {answer}\n\n");
         }
 
         public void AgainMessage()
@@ -61,7 +44,6 @@ namespace ConsoleApp1.MVCs.View
         {
             System.Console.WriteLine("\n\n...Closing Calculator\n");
         }
-
         public void ExceptionMessage()
         {
             System.Console.WriteLine("Exception Detected in Input, Redoing Input...");
